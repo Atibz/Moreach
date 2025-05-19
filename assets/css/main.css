@@ -21,7 +21,7 @@
 :root { 
   --background-color: #001d3d; /* Background color for the entire website, including individual sections */
   --default-color: #ffffff; /* Default color used for the majority of the text content across the entire website */
-  --heading-color: 			#000814; /* Color for headings, subheadings and title throughout the website */
+  --heading-color: 	#ffffff; /* Color for headings, subheadings and title throughout the website */
   --accent-color: #149ddd; /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
   --surface-color: #ffffff; /* The surface color is used as a background of boxed elements within sections, such as cards, icon boxes, or other elements that require a visual separation from the global background. */
   --contrast-color: #ffffff; /* Contrast color for text, ensuring readability against backgrounds of accent, heading, or default colors. */
@@ -42,7 +42,11 @@
 .light-background {
   --background-color: #f4fafd;
   --surface-color: #ffffff;
-  --default-color: #272829;
+  --default-color: #020912;
+  --heading-color: 	#020912;
+}
+.info-item h3{
+color: #020912;
 }
 
 .dark-background {
@@ -513,7 +517,7 @@ section,
 # Global Section Titles
 --------------------------------------------------------------*/
 .section-title {
-  padding-bottom: 60px;
+  padding-bottom: 5px;
   position: relative;
 }
 
