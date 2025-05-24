@@ -1,18 +1,43 @@
 backend:
   name: git-gateway
-  branch: main  # or your default branch name
+  branch: main
 
-media_folder: "assets/uploads"
-public_folder: "/assets/uploads"
+media_folder: "/assets/img/hero.jpg" # where uploaded files go
+public_folder: "/assets/img/hero.jpg" # how those files are referenced in your code
 
 collections:
-  - name: "products"
-    label: "Products"
-    folder: "content/products"
-    create: true
-    slug: "{{slug}}"
-    fields:
-      - { label: "Title", name: "title", widget: "string" }
-      - { label: "Description", name: "description", widget: "text" }
-      - { label: "Price", name: "price", widget: "number" }
-      - { label: "Image", name: "image", widget: "image" }
+  - name: "homepage"
+    label: "Homepage"
+    files:
+      - file: "content/hero.md"
+        label: "Hero Section"
+        name: "hero"
+        fields:
+          - label: "Hero Heading"
+            name: "heading"
+            widget: "string"
+          - label: "Hero Subheading"
+            name: "subheading"
+            widget: "string"
+          - label: "Hero Image"
+            name: "image"
+            widget: "image"
+            required: false
+
+  - name: "about"
+    label: "About Section"
+    files:
+      - file: "content/about.md"
+        label: "About"
+        name: "about"
+        fields:
+          - label: "Title"
+            name: "title"
+            widget: "string"
+          - label: "Body"
+            name: "body"
+            widget: "markdown"
+          # - label: "Image"
+          #   name: "image"
+          #   widget: "image"
+            required: false
