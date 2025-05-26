@@ -703,33 +703,38 @@
 <script src="https://cdn.jsdelivr.net/npm/gray-matter@4.0.3/index.min.js"></script>
 
 
+
+<script src="https://cdn.jsdelivr.net/npm/gray-matter@4.0.3/index.min.js"></script>
+
 <script>
   fetch('content/about.md')
     .then(response => response.text())
     .then(markdown => {
-      const parsed = matter(markdown).data;
+      const parsed = matter(markdown); // 👈 Call it here
+      const data = parsed.data;
 
-      // Inject into HTML
-
-      document.getElementById('about-header').textContent = parsed.about_header;
-      document.getElementById('about-body').textContent = parsed.about_body;
+      // Inject into your HTML
+      document.getElementById('about-header').textContent = data.about_header;
+      document.getElementById('about-body').textContent = data.about_body;
     })
     .catch(error => console.error('Error loading about.md:', error));
 </script>
+
 
 
 <script>
   fetch('content/homepage.md')
     .then(response => response.text())
     .then(markdown => {
-      const parsed = matter(markdown).data;
+      const parsed = matter(markdown); // 👈 Call it here
+      const data = parsed.data;
 
-      // Inject into HTML
-      document.getElementById('hero-image').src = parsed.hero_image;
-      document.getElementById('hero-text').textContent = parsed.hero_text;
+      document.getElementById('hero-image').src = data.hero_image;
+      document.getElementById('hero-text').textContent = data.hero_text;
     })
-    .catch(error => console.error('Error loading markdown:', error));
+    .catch(error => console.error('Error loading homepage.md:', error));
 </script>
+
 
 </body>
 
