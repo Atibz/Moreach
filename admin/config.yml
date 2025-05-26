@@ -2,42 +2,37 @@ backend:
   name: git-gateway
   branch: main
 
-media_folder: "/assets/img/hero.jpg" # where uploaded files go
-public_folder: "/assets/img/hero.jpg" # how those files are referenced in your code
+media_folder: "uploads"
+public_folder: "/uploads"
 
 collections:
   - name: "homepage"
     label: "Homepage"
     files:
-      - file: "content/hero.md"
-        label: "Hero Section"
-        name: "hero"
+      - label: "Homepage Content"
+        name: "homepage"
+        file: "content/homepage.md"
         fields:
-          - label: "Hero Heading"
-            name: "heading"
-            widget: "string"
-          - label: "Hero Subheading"
-            name: "subheading"
-            widget: "string"
           - label: "Hero Image"
-            name: "image"
+            name: "hero_image"
             widget: "image"
-            required: false
+          - label: "Hero Heading"
+            name: "hero_heading"
+            widget: "string"
+          - label: "Hero Text"
+            name: "hero_text"
+            widget: "text"
 
   - name: "about"
-    label: "About Section"
+    label: "About Page"
     files:
-      - file: "content/about.md"
-        label: "About"
+      - label: "About Content"
         name: "about"
+        file: "content/about.md"
         fields:
-          - label: "Title"
-            name: "title"
+          - label: "About Heading"
+            name: "about_header"
             widget: "string"
-          - label: "Body"
-            name: "body"
-            widget: "markdown"
-          - label: "Image"
-            name: "image"
-            widget: "image"
-            required: false
+          - label: "About Body"
+            name: "about_body"
+            widget: "text"

@@ -44,7 +44,7 @@
     <i class="header-toggle d-xl-none bi bi-list"></i>
 
     <div class="profile-img">
-      <img src="assets/img/hero.jpg" alt="" class="img-fluid rounded-circle">
+      <img src="uploads/hero.jpg" alt="Hero Image" class="img-fluid rounded-circle">
     </div>
 
     <a href="index.html" class="logo d-flex align-items-center justify-content-center">
@@ -77,11 +77,11 @@
     <!-- Hero Section -->
     <section id="hero" class="hero section dark-background">
 
-      <img src="assets/img/hero.jpg" alt="" data-aos="fade-in" class="">
+      <img id="hero-image" src="uploads/hero.jpg" alt="Hero Image" data-aos="fade-in" class="">
 
       <div class="container" data-aos="fade-up" data-aos-delay="100">
         <h2>Atiba Bukunmi</h2>
-        <p>I'm a <span class="typed" data-typed-items="Developer, Problem Solver, Free Thinker,Project Manager, Creative Mind, Night Owl">Designer</span><span class="typed-cursor typed-cursor--blink" aria-hidden="true"></span><span class="typed-cursor typed-cursor--blink" aria-hidden="true"></span></p>
+        <p>I'm a <span class="typed" id="hero-text" data-typed-items="Developer, Problem Solver, Free Thinker,Project Manager, Creative Mind, Night Owl">Designer</span><span class="typed-cursor typed-cursor--blink" aria-hidden="true"></span><span class="typed-cursor typed-cursor--blink" aria-hidden="true"></span></p>
       </div>
 
     </section><!-- /Hero Section -->
@@ -91,8 +91,8 @@
 
       <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
-        <h2>About</h2>
-        <p>A natural problem solver driven by a passion for next-level web development and futuristic design. I specialize in turning bold ideas into future-ready digital experiences, proudly rooted in Lagos, Nigeria, where we go hard or go home!
+        <h2 id="about-header">About</h2>
+        <p id="about-body">A natural problem solver driven by a passion for next-level web development and futuristic design. I specialize in turning bold ideas into future-ready digital experiences, proudly rooted in Lagos, Nigeria, where we go hard or go home!
 </p>
       </div><!-- End Section Title -->
     </section><!-- /About Section -->
@@ -698,6 +698,37 @@
       }
     });
   }
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/gray-matter@4.0.3/index.min.js"></script>
+
+
+<script>
+  fetch('content/about.md')
+    .then(response => response.text())
+    .then(markdown => {
+      const parsed = matter(markdown).data;
+
+      // Inject into HTML
+
+      document.getElementById('about-header').textContent = parsed.about_header;
+      document.getElementById('about-body').textContent = parsed.about_body;
+    })
+    .catch(error => console.error('Error loading about.md:', error));
+</script>
+
+
+<script>
+  fetch('content/homepage.md')
+    .then(response => response.text())
+    .then(markdown => {
+      const parsed = matter(markdown).data;
+
+      // Inject into HTML
+      document.getElementById('hero-image').src = parsed.hero_image;
+      document.getElementById('hero-text').textContent = parsed.hero_text;
+    })
+    .catch(error => console.error('Error loading markdown:', error));
 </script>
 
 </body>

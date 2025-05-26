@@ -1,6 +1,4 @@
 ---
-title: "About"
-subtitle: "Learn more about me"
-body: "This is where your About content will go. You can change this from the CMS."
-# image: "/images/about.jpg"
+about_header: "About Us"
+about_body: "A natural problem solver driven by a passion for next-level web development and futuristic design. I specialize in turning bold ideas into future-ready digital experiences, proudly rooted in Lagos, Nigeria, where we go hard or go home!"
 ---
