@@ -18,10 +18,10 @@
 }
 
 /* Global Colors - The following color variables are used throughout the website. Updating them here will change the color scheme of the entire website */
-:root { 
-  --background-color: #001d3d; /* Background color for the entire website, including individual sections */
+:root {
+  --background-color: #1B263B; /* Background color for the entire website, including individual sections */
   --default-color: #ffffff; /* Default color used for the majority of the text content across the entire website */
-  --heading-color: 	#ffffff; /* Color for headings, subheadings and title throughout the website */
+  --heading-color: #050d18; /* Color for headings, subheadings and title throughout the website */
   --accent-color: #149ddd; /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
   --surface-color: #ffffff; /* The surface color is used as a background of boxed elements within sections, such as cards, icon boxes, or other elements that require a visual separation from the global background. */
   --contrast-color: #ffffff; /* Contrast color for text, ensuring readability against backgrounds of accent, heading, or default colors. */
@@ -42,11 +42,7 @@
 .light-background {
   --background-color: #f4fafd;
   --surface-color: #ffffff;
-  --default-color: #020912;
-  --heading-color: 	#020912;
-}
-.info-item h3{
-color: #020912;
+  --default-color: #272829;
 }
 
 .dark-background {
@@ -517,7 +513,7 @@ section,
 # Global Section Titles
 --------------------------------------------------------------*/
 .section-title {
-  padding-bottom: 5px;
+  padding-bottom: 60px;
   position: relative;
 }
 
@@ -1289,4 +1285,117 @@ section,
 
 .info-item p{
   color: #272829;
+}
+
+/* Developer portfolio content */
+.skip-link { position: fixed; top: -100px; left: 16px; z-index: 10000; padding: 12px 18px; background: #fff; color: #173b6c; }
+.skip-link:focus { top: 12px; }
+.header .header-toggle { border: 0; }
+a:focus-visible, button:focus-visible { outline: 3px solid #149ddd; outline-offset: 5px; }
+.hero .hero-role { font-size: clamp(1.5rem, 4vw, 2.2rem); font-weight: 600; }
+.hero .hero-intro { max-width: 680px; font-size: 1.05rem; line-height: 1.8; margin-top: 18px; }
+.hero-actions { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 28px; }
+.portfolio-button { display: inline-flex; align-items: center; justify-content: center; gap: 12px; padding: 12px 20px; background: #0875a7; color: #fff; border: 1px solid #0875a7; border-radius: 5px; font-weight: 600; }
+.portfolio-button:hover { background: #065f88; color: #fff; }
+.portfolio-button-outline { background: transparent; border-color: #fff; }
+.portfolio-button-outline:hover { background: #fff; color: #173b6c; }
+.project-card, .skill-panel { background: var(--surface-color); border: 1px solid #dbe4ec; border-radius: 8px; overflow: hidden; }
+.project-image { display: block; background: #e9eef3; }
+.project-image img { width: 100%; aspect-ratio: 16 / 10; object-fit: cover; object-position: top; }
+.project-copy { padding: 24px; }
+.project-copy h3 { font-size: 1.35rem; margin-bottom: 18px; }
+.project-copy a { color: #08678f; font-weight: 600; }
+.project-category { font-size: .8rem; letter-spacing: .08em; text-transform: uppercase; color: #526578; margin-bottom: 8px; }
+.skill-panel { padding: 24px; }
+.skill-panel h3 { font-size: 1.15rem; margin-bottom: 16px; }
+.skill-panel p { margin-bottom: 0; line-height: 1.7; }
+.skill-tags { display: flex; flex-wrap: wrap; gap: 8px; padding: 0; list-style: none; margin-bottom: 18px; }
+.skill-tags li { background: #eaf4fa; color: #174566; border-radius: 4px; padding: 6px 10px; font-size: .9rem; }
+.about .content ul li { flex-wrap: wrap; gap: 4px; overflow-wrap: anywhere; }
+.contact .info-item a { overflow-wrap: anywhere; }
+@media (max-width: 575px) {
+  .hero .container { padding: 24px; }
+  .hero h2 { font-size: 2.25rem; }
+  .hero .hero-intro { font-size: 1rem; }
+  .project-copy { padding: 20px; }
+}
+
+.project-subheading { font-size: 1rem; margin: 20px 0 10px; }
+.project-highlights { padding-left: 20px; line-height: 1.7; margin-bottom: 24px; }
+.project-highlights li + li { margin-top: 8px; }
+.additional-projects { border-top: 1px solid #dbe4ec; padding-top: 20px; }
+.additional-projects summary { cursor: pointer; font-weight: 600; color: #173b6c; }
+.additional-projects li { margin-bottom: 10px; }
+
+.index-page #portfolio { padding-bottom: 24px; }
+.index-page #skills { padding-top: 24px; }
+
+/* Keep headings readable on dark content sections. */
+.index-page #about,
+.index-page #resume,
+.index-page #services,
+.index-page #contact {
+  --heading-color: #f1f5f9;
+}
+
+.index-page .resume .resume-item h4 {
+  color: #7dd3fc;
+}
+
+.index-page #contact .info-wrap {
+  --heading-color: #050d18;
+}
+
+/* Reuse the compact museum photo with a face crop in the sidebar. */
+.index-page .header .profile-img {
+  position: relative;
+  flex: 0 0 120px;
+  width: 120px;
+  height: 120px;
+  margin: 15px auto;
+  border: 8px solid color-mix(in srgb, var(--default-color), transparent 85%);
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.index-page .header .profile-img img {
+  position: absolute;
+  left: -148px;
+  top: -58px;
+  display: block;
+  width: 324px;
+  height: 432px;
+  max-width: none;
+  margin: 0;
+  border: 0;
+  transform: none;
+}
+
+.index-page .about-portrait {
+  display: block;
+  width: 100%;
+  max-width: 405px;
+  height: auto;
+  margin-inline: auto;
+  border-radius: 12px;
+}
+
+.index-page .hero img {
+  object-position: 70% center;
+}
+
+.index-page .hero::before {
+  background: linear-gradient(90deg, rgba(4, 11, 20, .85) 0%, rgba(4, 11, 20, .62) 45%, rgba(4, 11, 20, .12) 100%);
+}
+
+.index-page .hero h2,
+.index-page .hero .hero-intro {
+  max-width: 56%;
+}
+
+@media (max-width: 767px) {
+  .index-page .hero img { object-position: 76% center; }
+  .index-page .hero::before { background: rgba(4, 11, 20, .65); }
+  .index-page .hero h2,
+  .index-page .hero .hero-intro { max-width: 100%; }
 }
